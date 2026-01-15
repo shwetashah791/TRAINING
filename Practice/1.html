@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Spring Flowers School</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: Arial, Helvetica, sans-serif;
+    }
+
+    body {
+      background-color: #f4f4f4;
+    }
+
+    /* Header */
+    header {
+      background-color: #f6c99a;
+      padding: 15px 20px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      border-bottom: 2px solid #333;
+    }
+
+    .logo {
+      background-color: #fff;
+      padding: 8px 16px;
+      border: 1px solid #333;
+      font-weight: bold;
+    }
+
+    nav button {
+      padding: 8px 14px;
+      margin-left: 10px;
+      border: 1px solid #333;
+      background-color: #fff;
+      cursor: pointer;
+    }
+
+    nav button:hover {
+      background-color: #eee;
+    }
+
+    /* Main Container */
+    .container {
+      margin: 20px;
+      background-color: #f6c99a;
+      border: 2px solid #333;
+      min-height: 450px;
+      padding: 20px;
+      display: none;
+    }
+
+    .container.active {
+      display: block;
+    }
+
+    /* Welcome Page */
+    .welcome {
+      text-align: center;
+      margin-top: 150px;
+      font-size: 24px;
+      font-weight: bold;
+    }
+
+    /* Student Profile */
+    .profile {
+      display: flex;
+      gap: 40px;
+      align-items: flex-start;
+    }
+
+    .student-image {
+      width: 180px;
+      height: 180px;
+      border-radius: 50%;
+      border: 2px solid #333;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: bold;
+      background-color: #fbe2c3;
+    }
+
+    .student-info h2 {
+      margin-bottom: 15px;
+      text-align: center;
+    }
+
+    .student-info p {
+      margin-bottom: 8px;
+      font-size: 16px;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Header with Logo and Menu -->
+  <header>
+    <div class="logo">Logo</div>
+    <nav>
+      <button onclick="showWelcome()">Welcome</button>
+      <button onclick="showProfile()">Student Profile</button>
+    </nav>
+  </header>
+
+  <!-- Welcome Page -->
+  <div id="welcomePage" class="container active">
+    <div class="welcome">
+      Welcome to Spring Flowers School
+    </div>
+  </div>
+
+  <!-- Student Profile Page -->
+  <div id="profilePage" class="container">
+    <div class="profile">
+      <div class="student-image">Student Image</div>
+      <div class="student-info">
+        <h2>Student Information</h2>
+        <p><strong>Name:</strong> John Doe</p>
+        <p><strong>Class:</strong> Grade 10</p>
+        <p><strong>Roll No:</strong> 25</p>
+        <p><strong>School:</strong> Spring Flowers School</p>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    function showWelcome() {
+      document.getElementById('welcomePage').classList.add('active');
+      document.getElementById('profilePage').classList.remove('active');
+    }
+
+    function showProfile() {
+      document.getElementById('profilePage').classList.add('active');
+      document.getElementById('welcomePage').classList.remove('active');
+    }
+  </script>
+
+</body>
+</html>

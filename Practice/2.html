@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Spring Flowers School</title>
+
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <style>
+    body {
+      background-color: #f4f4f4;
+    }
+
+    /* Header */
+    header {
+      background-color: #f6c99a;
+      border-bottom: 2px solid #333;
+    }
+
+    .logo {
+      background-color: #fff;
+      padding: 8px 16px;
+      border: 1px solid #333;
+      font-weight: bold;
+    }
+
+    /* Main Container */
+    .content-box {
+      background-color: #f6c99a;
+      border: 2px solid #333;
+      min-height: 450px;
+      padding: 20px;
+      display: none;
+    }
+
+    .content-box.active {
+      display: block;
+    }
+
+    /* Profile */
+    .profile {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 30px;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .student-image {
+      width: 180px;
+      height: 180px;
+      border-radius: 50%;
+      border: 2px solid #333;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background-color: #fbe2c3;
+      font-weight: bold;
+    }
+
+    /* Welcome */
+    .welcome {
+      text-align: center;
+      font-size: 24px;
+      font-weight: bold;
+      margin-top: 150px;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Header / Menu -->
+  <header class="p-3">
+    <div class="container d-flex flex-wrap align-items-center justify-content-between">
+      <div class="logo">Logo</div>
+      <div class="btn-group">
+        <button class="btn btn-outline-dark" onclick="showSection('welcome')">Welcome</button>
+        <button class="btn btn-outline-dark" onclick="showSection('profile')">Student Profile</button>
+        <button class="btn btn-outline-dark" onclick="showSection('timetable')">TimeTable</button>
+      </div>
+    </div>
+  </header>
+
+  <div class="container my-4">
+
+    <!-- Welcome Page -->
+    <div id="welcome" class="content-box active">
+      <div class="welcome">Welcome to Spring Flowers School</div>
+    </div>
+
+    <!-- Profile Page -->
+    <div id="profile" class="content-box">
+      <div class="profile">
+        <div class="student-image">Student Image</div>
+        <div>
+          <h3 class="text-center mb-3">Student Information</h3>
+          <p><strong>Name:</strong> John Doe</p>
+          <p><strong>Class:</strong> Grade 10</p>
+          <p><strong>Roll No:</strong> 25</p>
+          <p><strong>School:</strong> Spring Flowers School</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- TimeTable Page -->
+    <div id="timetable" class="content-box">
+      <h3 class="text-center mb-4">Weekly Time Table</h3>
+      <div class="table-responsive">
+        <table class="table table-bordered table-striped text-center">
+          <thead class="table-dark">
+            <tr>
+              <th>Day</th>
+              <th>9 - 10</th>
+              <th>10 - 11</th>
+              <th>11 - 12</th>
+              <th>12 - 1</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Monday</td>
+              <td>Math</td>
+              <td>Science</td>
+              <td>English</td>
+              <td>Computer</td>
+            </tr>
+            <tr>
+              <td>Tuesday</td>
+              <td>English</td>
+              <td>Math</td>
+              <td>Science</td>
+              <td>Sports</td>
+            </tr>
+            <tr>
+              <td>Wednesday</td>
+              <td>Science</td>
+              <td>Computer</td>
+              <td>Math</td>
+              <td>English</td>
+            </tr>
+            <tr>
+              <td>Thursday</td>
+              <td>Math</td>
+              <td>English</td>
+              <td>Computer</td>
+              <td>Science</td>
+            </tr>
+            <tr>
+              <td>Friday</td>
+              <td>Computer</td>
+              <td>Math</td>
+              <td>Sports</td>
+              <td>English</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+  <script>
+    function showSection(sectionId) {
+      document.querySelectorAll('.content-box').forEach(section => {
+        section.classList.remove('active');
+      });
+      document.getElementById(sectionId).classList.add('active');
+    }
+  </script>
+
+</body>
+</html>
